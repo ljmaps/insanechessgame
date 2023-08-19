@@ -1,0 +1,16 @@
+body {
+  padding: 0;
+  margin: 0;
+  /* background-color: rgb(24, 52, 99); */
+  /* background-color: black; */
+  /* background-image: linear-gradient(to top, white, rgb(24, 52, 99)); */
+  display: flex;
+  flex-direction: row;
+  
+  font-family: "REM";
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}

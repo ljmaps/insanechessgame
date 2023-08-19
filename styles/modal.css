@@ -1,0 +1,167 @@
+#overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  /* opacity: 0.6; */
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  color: white;
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  /* position: relative; */
+}
+
+#create-modal,
+#join-modal,
+#time-select {
+  margin: 20px 0;
+  /* width: 250px; */
+  /* height: 300px; */
+  padding: 8px 25px;
+  border-radius: 50px;
+  /* display: flex; */
+  flex-direction: column;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+#create-modal {
+  background-color: rgb(218, 218, 218);
+}
+
+#modal-create-button {
+  background-color: rgb(32, 214, 102);
+  vertical-align: middle;
+  width: 150px;
+  height: 30px;
+  display: flex;
+  padding-left: 9px;
+  align-items: center;
+  font-size: 17px;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+#modal-create-button:hover {
+  background-color: rgb(28, 172, 83);
+}
+
+#join-modal {
+  background-color: rgb(158, 62, 158);
+  box-shadow: 0px 10px 30px rgb(100, 0, 143);
+}
+
+#join-input-box,
+.name-input-box,
+.time-input-field {
+  margin: 8px 0;
+  height: 30px;
+  border: 1px solid rgb(187, 187, 187);
+  border-radius: 1px;
+  font-size: 15px;
+}
+
+#join-input-box:focus,
+.name-input-box:focus,
+.time-input-field:focus {
+  outline: 2px solid rgb(128, 8, 188);
+}
+
+#back-arrow {
+  /* background-color: blue;
+  opacity: 1;
+  border-radius: 100%; */
+  /* box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.6); */
+  width: 55px;
+  height: 47px;
+  /* display: none; */
+  position: absolute;
+  top: 60px;
+  left: 90px;
+  cursor: pointer;
+}
+
+#join-modal {
+  position: relative;
+}
+
+#invalid-code-message-container,
+#invalid-time-message-container {
+  position: absolute;
+  background-color: rgb(164, 164, 164);
+  color: red;
+  font-size: 20px;
+  display: none;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  top: -75px;
+  left: 0px;
+  right: 0px;
+  height: 40px;
+  border: 3px solid black;
+  font-weight: bold;
+}
+
+#time-select {
+  position: relative;
+  /* display: grid; */
+  display: none;
+  grid-template-columns: 75px 75px 75px;
+  column-gap: 10px;
+  row-gap: 0px;
+  
+  /* display: flex; */
+  background-color: aqua;
+}
+
+.time-select-caption {
+  margin-left: 5px;
+  color: rgb(66, 66, 66);
+}
+
+#time-input-field {
+  width: 60px;
+}
+
+#selected-queery-container {
+  cursor: pointer;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  display: flex;
+  justify-content: center;
+}
+
+#time-secure,
+#time-cancel {
+  margin: 4px 9px;
+  display: inline-block;
+  padding: 3px 5px;
+  border-style: solid;
+  border-width: 0;
+}
+
+.unselected {
+  width: 80px;
+  background-color: rgb(209, 209, 209);
+  color: rgb(71, 71, 71);
+}
+.unselected:hover {
+  background-color: rgb(191, 214, 197)
+}
+
+.selected {
+  width: 70px;
+  background-color: rgb(30, 209, 132);
+  border-radius: 6px;
+}
+.selected:hover {
+  background-color: rgb(119, 202, 138);
+}

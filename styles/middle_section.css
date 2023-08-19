@@ -1,0 +1,139 @@
+#middle-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* box-shadow: inset 0px -100px 20px -20px white; */
+}
+
+#board-container {
+  border: 5px solid brown;
+  border-radius: 2px;
+  margin: 10px 0;
+  position: relative;
+}
+
+#piece-images {
+  display: none;
+}
+
+.player-info {
+  /* background-color: lightpink; */
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(232, 232, 232);
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile-picture {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.profile-picture img {
+  object-fit: cover;
+  object-position: middle;
+  width: 43px;
+  height: 43px;
+  border-radius: 22px;
+}
+
+.player-username {
+  display: inline-block;
+}
+
+.game-status {
+  font-size: 20px;
+}
+
+#white-promotion-container,
+#black-promotion-container {
+  width: auto;
+  margin: 10px 10px;
+  padding: 4px 7px;
+  background-color: rgb(237, 237, 237);
+  opacity: 0.9;
+  /* display: flex; */
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid black;
+  display: none;
+  position: absolute;
+  top: -75px;
+  left: 50px;
+}
+
+#white-promotion-container div,
+#black-promotion-container div {
+  object-fit: cover;
+  object-position: center;
+  margin: 0px 3px;
+  cursor: pointer;
+  transition: background-color 0.1s;
+  border-radius: 2px;
+  /* background-color: lightpink;
+  border: 1px solid red; */
+}
+#white-promotion-container div:hover,
+#black-promotion-container div:hover {
+  background-color: rgb(163, 163, 163);
+}
+
+.promote-piece {
+  width: 30px;
+}
+
+.stale-banner,
+.check-banner,
+.time-out {
+  width: 300px;
+  /* display: flex; */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  position: absolute;
+  left: 50px;
+  border-radius: 1px;
+  border: 3px solid black;
+}
+
+.check-banner {
+  background-color: rgb(255, 89, 0);
+}
+
+.stale-banner {
+  background-color: rgb(151, 151, 151);
+}
+
+.time-out {
+  /* display: flex; */
+  background-color: green;
+}
+
+#checkmate-banner1,
+#stalemate-banner1,
+#upper-time-out {
+  top: -100px;
+}
+
+#checkmate-banner2,
+#stalemate-banner2,
+#lower-time-out {
+  bottom: -100px;
+}
+
+#player1-captures img,
+#player2-captures img {
+  width: 30px;
+  margin-left: 5px;
+  /* background-color: rgb(193, 193, 193); */
+}

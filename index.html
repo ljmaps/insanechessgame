@@ -1,0 +1,192 @@
+<!DOCTYPE html5>
+
+<html>
+  <head>
+    <title>Chess</title>
+    <link rel="stylesheet" href="styles/general.css"/>
+    <link rel="stylesheet" href="styles/left_section.css"/>
+    <link rel="stylesheet" href="styles/middle_section.css"/>
+    <link rel="stylesheet" href="styles/right_section.css"/>
+    <link rel="stylesheet" href="styles/modal.css"/>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=REM:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="left-section">
+      <div id="create-button">
+        <p class="plus">+</p><p>Create</p>
+      </div>
+      <div id="join-button">
+        <p>Join Game</p>
+      </div>
+      <div id="quit-button">
+        <p>Quit Game</p>
+      </div>
+      <div id="exit-button">
+        <p>Exit Game</p>
+      </div>
+      <div id="restart-button">
+        <p>Restart Game</p>
+      </div>
+      <div id="time-set-button">
+        <p>Set Time</p>
+      </div>
+      <div id="game-code-display"><p>Code: 1234</p></div>
+    </div>
+    <div id="middle-section">
+      <div id="player2-info" class="player-info">
+        <div class="player-details">
+          <div class="profile">
+            <div class="profile-picture">
+              <img src="images/cute-cat.jpg"/>
+            </div>
+            <p id="player2-username" class="player-username">John Smith</p>
+          </div>
+          <div id="player2-captures"></div>
+        </div>
+        <div id="game-status2" class="game-status"><p>0</p></div>
+      </div>
+      <div id="board-container">
+        <canvas id="board"></canvas>
+        <div id="white-promotion-container">
+          <div id="whiteQueenPromote">
+            <img class="promote-piece" src="images/white_queen.svg">
+          </div>
+          <div id="whiteNitePromote">
+            <img class="promote-piece" src="images/white_knite.svg">
+          </div>
+          <div id="whiteRookPromote">
+            <img class="promote-piece" src="images/white_rook.svg">
+          </div>
+          <div id="whiteBishopPromote">
+            <img class="promote-piece" src="images/white_bishop.svg">
+          </div>
+          <!-- <div id="promote-to-pawn">
+            <img class="promote-piece" src="images/white_pawn.png">
+          </div> -->
+        </div>
+        <div id="black-promotion-container">
+          <div id="blackQueenPromote">
+            <img class="promote-piece" src="images/black_queen.svg">
+          </div>
+          <div id="blackNitePromote">
+            <img class="promote-piece" src="images/black_knite.svg">
+          </div>
+          <div id="blackRookPromote">
+            <img class="promote-piece" src="images/black_rook.svg">
+          </div>
+          <div id="blackBishopPromote">
+            <img class="promote-piece" src="images/black_bishop.svg">
+          </div>
+          <!-- <div id="promote-to-pawn">
+            <img class="promote-piece" src="images/white_pawn.png">
+          </div> -->
+        </div>
+        <div id="checkmate-banner1" class="check-banner">
+          <p>CHECKMATE</p>
+        </div>
+        <div id="checkmate-banner2" class="check-banner">
+          <p>CHECKMATE</p>
+        </div>
+        <div id="stalemate-banner1" class="stale-banner">
+          <p>STALEMATE</p>
+        </div>
+        <div id="stalemate-banner2" class="stale-banner">
+          <p>STALEMATE</p>
+        </div>
+        <div id="upper-time-out" class="time-out"></div>
+        <div id="lower-time-out" class="time-out"></div>
+      </div>
+      <div id="piece-images">
+        <img id="white_pawn" src="images/white_pawn.svg"/>
+        <img id="white_rook" src="images/white_rook.svg"/>
+        <img id="white_king" src="images/white_king.svg"/>
+        <img id="white_queen" src="images/white_queen.svg"/>
+        <img id="white_bishop" src="images/white_bishop.svg"/>
+        <img id="white_knite" src="images/white_knite.svg"/>
+        <img id="black_pawn" src="images/black_pawn.svg"/>
+        <img id="black_king" src="images/black_king.svg"/>
+        <img id="black_queen" src="images/black_queen.svg"/>
+        <img id="black_knite" src="images/black_knite.svg"/>
+        <img id="black_bishop" src="images/black_bishop.svg"/>
+        <img id="black_rook" src="images/black_rook.svg"/>
+      </div>
+      <div id="player1-info" class="player-info">
+        <div class="player-details">
+          <div class="profile">
+            <div class="profile-picture">
+              <img src="images/swag-cat.jpg"/>
+            </div>
+            <p id="player1-username" class="player-username">Joe King</p>
+          </div>
+          <div id="player1-captures"></div>
+        </div>
+        <div id="game-status1" class="game-status"><p>0</p></div>
+      </div>
+    </div>
+    <div id="right-section">
+      <div id="clock">
+        <div id="player2-time" class="time">
+          <span id="p2Hours">00</span
+          >:<span id="p2Minutes"
+          >00</span
+          >:<span id="p2Seconds"
+          >00</span>
+        </div>
+        <div id="time-break"></div>
+        <div id="player1-time" class="time">
+          <span id="p1Hours">00</span
+            >:<span id="p1Minutes"
+            >00</span
+            >:<span id="p1Seconds"
+            >00</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="overlay">
+      <img id="back-arrow" src="images/left_arrow-PhotoRoom.png-PhotoRoom.png"/>
+      <div id="time-select">
+        <div id="invalid-time-message-container">
+          <p id="invalid-time-message">Invalid Time Code</p>
+        </div>
+        <div>
+          <label class="time-select-caption" for="hours">Hrs</label>
+        </div>
+        <div>
+          <label class="time-select-caption" for="minutes">Mins</label>
+        </div>
+        <div>
+          <label class="time-select-caption" for="seconds">Secs</label>
+        </div>
+        <input class="time-input-field" id="hour-select" type="text" name="hours" min="1" max="99"/>
+        <input class="time-input-field" id="minute-select" type="text" name="minutes" min="1" max="59"/>
+        <input class="time-input-field" id="second-select" type="text" name="seconds" min="1" max="59"/>
+        <div id="selected-queery-container">
+          <p class="unselected" id="time-secure">Set Time</p>
+          <p class="unselected" id="time-cancel">No Time</p>
+        </div>
+        </div>
+      <div id="create-modal">
+        <input id="creator-name" class="name-input-box" type="text" placeholder="Name"/>
+        <div id="modal-create-button">
+          <p class="plus">+</p><p>Create</p>
+        </div>
+      </div>
+      <div id="join-modal">
+        <input id="joiner-name" class="name-input-box" type="text" placeholder="Pseudonym"/>
+        <input id="join-input-box" type="text" placeholder="Game Code"/>
+        <div id="invalid-code-message-container">
+          <p id="invalid-code-message">Invalid Game Code</p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js" type="module"></script>
+</html>

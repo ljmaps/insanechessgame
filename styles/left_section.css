@@ -1,0 +1,90 @@
+#left-section {
+  /* background-color: rgb(136, 43, 43); */
+  width: 20%;
+  padding: 50px 0px 0px 25px;
+}
+
+#create-button,
+#join-button,
+#quit-button,
+#restart-button,
+#exit-button,
+#time-set-button {
+  opacity: 0.5;
+  vertical-align: middle;
+  height: 30px;
+  display: flex;
+  /* justify-content: center; */
+  padding-left: 9px;
+  align-items: center;
+  font-size: 17px;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: opacity 0.13s;
+}
+#create-button:hover,
+#join-button:hover,
+#quit-button:hover,
+#restart-button:hover,
+#exit-button:hover,
+#time-set-button:hover {
+  opacity: 1;
+}
+
+#create-button {
+  background-color: rgb(32, 214, 102);
+  width: 90px;
+}
+.plus {
+  font-size: 23px;
+  padding-right: 3px;
+}
+
+#join-button {
+  margin-top: 30px;
+  background-color: purple;
+  margin-bottom: 30px;
+  width: 116px;
+}
+
+#game-code-display {
+  display: none;
+  width: 100px;
+  margin-top: 15px;
+  margin-left: 5px;
+  padding: 3px 6px;
+  background-color: rgb(255, 213, 0);
+  border-radius: 4px;
+  border: 2px solid black;
+  opacity: 0.4;
+  cursor: default;
+  transition: opacity 0.13s;
+}
+#game-code-display:hover {
+  opacity: 1;
+}
+
+#quit-button,
+#exit-button {
+  width: 120px;
+  display: none;
+  background-color: rgb(114, 214, 32);
+  margin-bottom: 15px;
+}
+
+#restart-button {
+  /* display: none; */
+  width: 140px;
+  background-color: rgb(51, 0, 128);
+  transition: color 0.13s;
+}
+#restart-button:hover {
+  color: rgb(167, 167, 167);
+}
+
+#time-set-button {
+  margin-top: 30px;
+  width: 95px;
+  background-color: rgb(0, 132, 255);
+}
