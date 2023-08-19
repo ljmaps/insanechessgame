@@ -57,6 +57,22 @@ window.addEventListener('load', function() {
   const board = document.getElementById("board");
   const lightSquareColour = "#f2ebd5";
   const darkSquareColour = "#9c5225";
+  // #52d5de
+  // #40ad96
+  // #9d58d6
+  //#9c5225
+
+  var colourBurns = true;
+  const burnColourToggler = document.getElementById("burns-toggle");
+  burnColourToggler.addEventListener("click", () => {
+    if (colourBurns) {
+      colourBurns = false;
+    } else {
+      colourBurns = true;
+    }
+    burnColourToggler.classList.toggle("burns-hide");
+    burnColourToggler.classList.toggle("burns-show");
+  });
 
   const squareSize = 48;
   board.width = squareSize * 8;
@@ -1337,7 +1353,9 @@ window.addEventListener('load', function() {
   function update() {
     setBoard();
     setPieces(piecePositions);
-    setBurns();
+    if (colourBurns) {
+      setBurns();
+    }
   }
 
   function updateCaptures(player) {
